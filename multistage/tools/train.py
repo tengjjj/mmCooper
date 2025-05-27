@@ -20,7 +20,7 @@ from multistage.tools import train_utils
 
 def train_parser():
     parser = argparse.ArgumentParser(description="synthetic data generation")
-    parser.add_argument("--hypes_yaml", type=str, default='/home/tengjian/mmCooper/multistage/hypes_yaml/multistage_dair.yaml',
+    parser.add_argument("--hypes_yaml", type=str, default='/home/tengjian/mmCooper/multistage/hypes_yaml/multistage_opv2v.yaml',
                         help='data generation yaml file needed ')
     parser.add_argument('--model_dir', default='',
                         help='Continued training path')
@@ -151,7 +151,7 @@ def main():
             batch_data = train_utils.to_device(batch_data, device)
 
             if not opt.half:
-                if epoch >= hypes.train_params.transformer_epoch:
+                if epoch >= hypes['train_params']['transformer_epoch']:
                     # model.fuse.transformer_flag = True
                     # model.transformer_flag = True
                     # criterion.transformer_flag = True                    

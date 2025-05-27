@@ -1,6 +1,6 @@
 name: point_pillar_multi_fusion
-root_dir: "/home/tengjian/data/opv2v/train"
-validate_dir: "/home/tengjian/data/opv2v/validate"
+root_dir: "/mnt/data1/opv2v/train"
+validate_dir: "/mnt/data1/opv2v/validate"
 
 wild_setting:
   async: True
@@ -73,7 +73,6 @@ model:
   core_method: point_pillar_multi
   args:
     left_hand: true
-    use_lidar: *use_lidar
     train: *train
     postprocess: *postprocess
     voxel_size: *voxel_size
